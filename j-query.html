@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changing Box</title>
+    <style>
+      #colorBox {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Function to change the color of the box
+        function changeColor() {
+          // Check the current color of the box
+          var currentColor = $("#colorBox").css("background-color");
+
+          // Change the color from red to blue or vice versa
+          var newColor = currentColor === "rgb(255, 0, 0)" ? "green" : "yellow";
+
+          // Apply the new color to the box
+          $("#colorBox").css("background-color", newColor);
+        }
+
+        // Attach click event to the button
+        $("#changeColorBtn").on("click", function () {
+          changeColor();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="colorBox"></div>
+    <button id="changeColorBtn">Change Color</button>
+  </body>
+</html>
